@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react"
 import "./Landing.scss"
 
 function Landing() {
   return (
-    <h1>Landing</h1>
+    <div className="Landing">
+    </div>
   )
 }
 
