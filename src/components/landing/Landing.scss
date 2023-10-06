@@ -1,6 +1,19 @@
 .Landing{
     height: 100%;
-    // background-size: cover;
     background-size: 100vw 100vh;
     background-image: url(../../assets/TaskFlowBackground.jpg);
+    color: ivory;
+
+    &__container{
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        right: 25%;
+        border: ivory 3px solid;
+        border-radius: 8px;
+        padding: 5%;
+        background-color: rgb(161, 82, 150, 0.3);
+        font-size: x-large;
+        text-align: center;
+    }
 }
