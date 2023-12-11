@@ -37,7 +37,6 @@ function Landing() {
       .then((res) => {
         if (res.data.success) {
           console.log("logged in")
-          console.log(res)
         } else {
           signUp(email, accessToken)
         }
