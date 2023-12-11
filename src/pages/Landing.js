@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth"
 import { apiURL } from "../util/apiURL.js"
 import axios from "axios";
 import GoogleButton from 'react-google-button'
@@ -37,6 +37,7 @@ function Landing() {
       .then((res) => {
         if (res.data.success) {
           console.log("logged in")
+          console.log(res)
         } else {
           signUp(email, accessToken)
         }
@@ -63,7 +64,17 @@ function Landing() {
     } catch (error) {
       console.error(error);
     }
-  };  
+  }; 
+  
+  const logout = () => {
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      console.log("logged outtt")
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
 
   return (
     <div className="Landing">
@@ -73,6 +84,7 @@ function Landing() {
           <h2> Where Your Tasks Find Their Flow </h2>
           <button>About</button>
           <GoogleButton type="dark" onClick={loginWithGoogle}/>
+          <button onClick={logout}>logout</button>
         </div>   
       </div>
     </div>
