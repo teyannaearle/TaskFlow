@@ -3,9 +3,8 @@
     top: 30%;
     left: 25%;
     right: 25%;
-    border: ivory 3px solid;
+    // border: ivory 3px solid;
     border-radius: 8px;
-    padding: 5%;
 }
 
 .Landing{
@@ -14,6 +13,10 @@
     background-image: url(../assets/TaskFlowBackground.jpg);
     color: ivory;
 
+    &__header {
+        margin: 0 10% 0 10%;
+    }
+
     &__container{
         // position: absolute;
         // top: 30%;
@@ -21,15 +24,24 @@
         // right: 25%;
         // border: ivory 3px solid;
         // border-radius: 8px;
-        // padding: 5%;
         @include centered-landing-container;
-        background-color: rgb(161, 82, 150, 0.3);
-        font-size: x-large;
-        text-align: center;
+        &--signIn{
+            background-color: rgb(161, 82, 150, 0.3);
+            font-size: x-large;
+            text-align: center;
+            padding: 5%;
+        }
+
+        &--scroll{
+            @include centered-landing-container;
+            height: 60%;
+            overflow-y: scroll;
+        }
 
         &--about{
-            @include centered-landing-container;
+            // @include centered-landing-container;
             background-color: rgb(161, 82, 150, 0.6);
+            padding: 5%;
         }
     }
 }

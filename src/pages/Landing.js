@@ -8,8 +8,10 @@ function Landing() {
 
   return (
     <div className="Landing">
-      <div className="Page__container">
+      <div className="Landing__header">
         <h1>TaskFlow</h1>
+      </div>
+      <div className={!aboutOpen ? "Landing__container" : "Landing__container--scroll"}>
         {aboutOpen ? <About setAboutOpen={setAboutOpen} /> : <SignIn setAboutOpen={setAboutOpen} />}
       </div>
     </div>
