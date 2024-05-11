@@ -1,4 +1,5 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { useNavigate } from "react-router-dom";
 import { apiURL } from "../../util/apiURL.js"
 import GoogleButton from 'react-google-button' 
 import axios from "axios";
@@ -7,6 +8,7 @@ const API = apiURL()
 
 function GButton() {
     const auth = getAuth()
+    const navigate = useNavigate()
 
     const loginWithGoogle = async () => {
         const googleProvider = new GoogleAuthProvider();
@@ -35,6 +37,9 @@ function GButton() {
           .then((res) => {
             if (res.data.success) {
               console.log("logged in")
+              console.log(res.data)
+              localStorage.setItem('user', res.data.payload.user_id)
+              navigate("/home")
             } else {
               signUp(email, accessToken)
             }
@@ -56,6 +61,8 @@ function GButton() {
             .then((res) => {
               if (res.data.success) {
                 console.log("signed up & logged in")
+                localStorage.setItem('user', res.data.payload.user_id)
+                navigate("/home")
               }
             });
         } catch (error) {
