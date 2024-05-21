@@ -28,7 +28,28 @@ function GButton() {
       }
     
     const checkUser = async (email, accessToken) => {
-        try {
+      // try {
+      //   const response = await fetch(`${API}/users/${email}`, {
+      //     headers:{
+      //       Authorization: "Bearer " + accessToken,
+      //     }
+      //   })
+      //   const {success, payload} = await response.data.json()
+      //   if (success){
+      //     console.log("logged in")
+      //     // console.log(res.data)
+      //     localStorage.setItem('user', payload.user_id)
+      //     navigate("/home")
+      //   } else {
+      //     console.log("issue")
+      //     signUp(email, accessToken)
+      //   }
+      // } catch (error) {
+      //   console.log(error)
+      //   console.error(error)
+      // }
+
+      try {
           await axios.get(`${API}/users/${email}`, {
             headers:{
               Authorization: "Bearer " + accessToken,
@@ -38,7 +59,7 @@ function GButton() {
             if (res.data.success) {
               console.log("logged in")
               console.log(res.data)
-              localStorage.setItem('user', res.data.payload.user_id)
+              localStorage.setItem("user", res.data.payload.user_id)
               navigate("/home")
             } else {
               signUp(email, accessToken)
@@ -61,7 +82,7 @@ function GButton() {
             .then((res) => {
               if (res.data.success) {
                 console.log("signed up & logged in")
-                localStorage.setItem('user', res.data.payload.user_id)
+                localStorage.setItem("user", res.data.payload.user_id)
                 navigate("/home")
               }
             });
