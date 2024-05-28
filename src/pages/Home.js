@@ -13,7 +13,6 @@ function Home() {
         localStorage.setItem("user", false)
       });
       navigate("/")
-      console.log("signed out")
     } catch (error) {
       result = error.code;
     }
