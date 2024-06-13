@@ -70,7 +70,7 @@ function GButton() {
     }
   };
 
-  return <GoogleButton type="dark" onClick={loginWithGoogle} />;
+  return <GoogleButton type="dark" className="googleButton" onClick={loginWithGoogle}  />;
 }
 
 export default GButton;

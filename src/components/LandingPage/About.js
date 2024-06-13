@@ -3,7 +3,7 @@ import GButton from "./GButton";
 function About({ setAboutOpen }) {
   return (
     <div className="Landing__container--about">
-      <button onClick={() => setAboutOpen(false)}>X</button>
+      <button onClick={() => setAboutOpen(false)}>&#9421;</button>
       <h2>Your ultimate productivity companion.. </h2>
       <p>
         .. seamlessly blending your to-do lists with the power of your Google

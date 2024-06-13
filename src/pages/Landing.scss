@@ -3,7 +3,6 @@
     top: 30%;
     left: 25%;
     right: 25%;
-    // border: ivory 3px solid;
     border-radius: 8px;
 }
 
@@ -18,12 +17,6 @@
     }
 
     &__container{
-        // position: absolute;
-        // top: 30%;
-        // left: 25%;
-        // right: 25%;
-        // border: ivory 3px solid;
-        // border-radius: 8px;
         @include centered-landing-container;
         &--signIn{
             background-color: rgb(161, 82, 150, 0.3);
@@ -39,9 +32,23 @@
         }
 
         &--about{
-            // @include centered-landing-container;
             background-color: rgb(161, 82, 150, 0.6);
             padding: 5%;
         }
     }
+}
+
+.googleButton{
+    margin: auto;
+}
+
+@media screen and (max-width:550px){
+
+    .Landing{
+        &__container{ 
+            left: 10%;
+            right: 10%;
+        }
+    }
+
 }

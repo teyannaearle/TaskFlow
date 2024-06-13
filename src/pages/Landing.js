@@ -11,7 +11,7 @@ function Landing() {
       <div className="Landing__header">
         <h1>TaskFlow</h1>
       </div>
-      <div className={!aboutOpen ? "Landing__container" : "Landing__container--scroll"}>
+      <div className={aboutOpen ? "Landing__container--scroll" : "Landing__container" }>
         {aboutOpen ? <About setAboutOpen={setAboutOpen} /> : <SignIn setAboutOpen={setAboutOpen} />}
       </div>
     </div>
