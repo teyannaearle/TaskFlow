@@ -14,9 +14,16 @@
 
     &__header {
         margin: 0 10% 0 10%;
+
+        h1{
+            animation: fade-in 3s forwards;
+            opacity: 0;
+        }
     }
 
     &__container{
+        animation: fade-in 3s 1s forwards;
+        opacity: 0;
         @include centered-landing-container;
         &--signIn{
             background-color: rgb(161, 82, 150, 0.3);
@@ -42,13 +49,17 @@
     margin: auto;
 }
 
-@media screen and (max-width:550px){
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
+
+@media screen and (max-width:550px){
     .Landing{
         &__container{ 
             left: 10%;
             right: 10%;
         }
     }
-
 }
