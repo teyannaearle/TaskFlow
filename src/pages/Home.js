@@ -23,6 +23,8 @@ function Home() {
     <div>
       <h3>home</h3>
       <button onClick={userSignOut}>logout</button>
+      <a href="dailies"> Dailies </a>
+      <a href="/todos"> To Do's</a>
     </div>
 
   )
