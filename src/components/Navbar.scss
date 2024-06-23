@@ -1,0 +1,60 @@
+@mixin scale {
+    &:hover{
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  
+    &:active{
+      transform: scale(1);
+    }
+}
+
+.nav {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 4fr .5fr 4fr;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+
+    div {
+        margin: 1% 5% 1% 5%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        a {
+            @include scale;
+            display: block;
+            color: ivory;
+            background-color: rgb(161, 82, 150);
+            text-decoration: none;
+            font-size: x-large;
+            border-radius: 5px;
+            padding: 1%;
+            width: 100%;
+        }
+    }
+
+    button {
+        @include scale;
+        background: none;
+        border: none;
+        color: rgb(161, 82, 150);
+        font-size: 4em;
+        transform: scale(1.5);
+        
+        &:hover{
+            transform: scale(2);
+        }
+
+        &:active{
+            transform: scale(1.5);
+        }
+    }
+
+}
+
+
+  
