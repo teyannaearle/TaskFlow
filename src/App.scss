@@ -14,16 +14,3 @@ h1 {
     letter-spacing:1px;
 }
 
-button{
-   background-color: rgb(161, 82, 150);
-   color: ivory;
-   padding: 5px;
-   border: none;
-   border-radius: 2px;
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-   &:hover{
-        cursor: pointer;
-        box-shadow: 0 8px 16px 0 rgba(161,82,150), 0.5px 0.5px 0.5px 0.5px rgba(161,82,150);
-    }
-}
