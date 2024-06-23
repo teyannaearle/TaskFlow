@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import { signOut, getAuth } from "firebase/auth"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 function Home() {
   const auth = getAuth()
@@ -20,11 +20,9 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="homepage">
       <h3>home</h3>
       <button onClick={userSignOut}>logout</button>
-      <a href="dailies"> Dailies </a>
-      <a href="/todos"> To Do's</a>
     </div>
 
   )
