@@ -5,7 +5,7 @@ function SignIn({setAboutOpen}) {
     <div className="Landing__container--signIn">
         <h2> Where Your Tasks Find Their Flow </h2>
         <GButton />
-        <button onClick={()=>setAboutOpen(true)}>About</button>
+        <button className="Landing__container--aboutButton" onClick={()=>setAboutOpen(true)}>About Us</button>
     </div>   
   )
 }

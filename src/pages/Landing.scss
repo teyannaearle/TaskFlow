@@ -1,65 +1,139 @@
 @mixin centered-landing-container {
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    right: 25%;
-    border-radius: 8px;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  right: 25%;
+  border-radius: 8px;
 }
 
-.Landing{
-    height: 100%;
-    background-size: 100vw 100vh;
-    background-image: url(../assets/TaskFlowBackground.jpg);
-    color: ivory;
+@mixin scale {
+  &:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
-    &__header {
-        margin: 0 10% 0 10%;
-
-        h1{
-            animation: fade-in 3s forwards;
-            opacity: 0;
-        }
-    }
-
-    &__container{
-        animation: fade-in 3s 1s forwards;
-        opacity: 0;
-        @include centered-landing-container;
-        &--signIn{
-            background-color: rgb(161, 82, 150, 0.3);
-            font-size: x-large;
-            text-align: center;
-            padding: 5%;
-        }
-
-        &--scroll{
-            @include centered-landing-container;
-            height: 60%;
-            overflow-y: scroll;
-        }
-
-        &--about{
-            background-color: rgb(161, 82, 150, 0.6);
-            padding: 5%;
-        }
-    }
+  &:active{
+    transform: scale(1);
+  }
 }
 
-.googleButton{
+.Landing {
+  height: 100%;
+  background-size: 100vw 100vh;
+  background-image: url(../assets/TaskFlowBackground.jpg);
+  color: ivory;
+
+  &__header {
+    // margin: 0 10% 0 10%;
     margin: auto;
+    text-align: center;
+    font-size: larger;
+
+    h1 {
+      animation: fade-in 3s forwards;
+      opacity: 0;
+    }
+  }
+
+  &__container {
+    animation: fade-in 3s 1s forwards;
+    opacity: 0;
+    @include centered-landing-container;
+    &--signIn {
+      background-color: rgb(161, 82, 150, 0.3);
+      font-size: x-large;
+      text-align: center;
+      padding: 5%;
+    }
+
+    &--scroll {
+      @include centered-landing-container;
+      height: 60%;
+      overflow-y: scroll;
+    }
+
+    &--about {
+      background-color: rgb(161, 82, 150, 0.6);
+      padding: 5%;
+
+      button {
+        border: 1px solid;
+        background: none;
+        color: ivory;
+        font-size: x-large;
+        @include scale;
+        &:hover{
+          box-shadow: 0 8px 16px 0 rgb(255, 255, 240),
+          0.5px 0.5px 0.5px 0.5px rgb(255, 255, 240);
+        }
+        &:active{
+          box-shadow: 0px 8px 16px 0 rgb(255, 255, 240),
+          0.5px 0.5px 0.5px 0.5px rgb(255, 255, 240);
+        }
+      }
+    }
+
+    &--aboutButton {
+      border: 1px solid;
+      background: none;
+      color: ivory;
+      font-size: x-large;
+      margin-top: 2%; 
+      @include scale;
+      &:hover{
+        box-shadow: 0px 8px 16px 0 rgb(255, 255, 240),
+        0.5px 0.5px 0.5px 0.5px rgb(255, 255, 240);
+      }
+      &:active{
+        box-shadow: 0px 8px 16px 0 rgb(255, 255, 240),
+        0.5px 0.5px 0.5px 0.5px rgb(255, 255, 240);
+      }
+    }
+  }
+}
+
+.googleButton {
+  margin: auto;
+  @include scale;
 }
 
 @keyframes fade-in {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
+@media screen and (max-width: 1200px) {
+  .Landing {
+    &__container {
+      left: 15%;
+      right: 15%;
 
-@media screen and (max-width:550px){
-    .Landing{
-        &__container{ 
-            left: 10%;
-            right: 10%;
-        }
+      &--scroll {
+        left: 15%;
+        right: 15%;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .Landing {
+    &__container {
+      left: 10%;
+      right: 10%;
+
+      &--scroll {
+        left: 10%;
+        right: 10%;
+      }
+    }
+
+    &__header {
+      font-size: medium;
+    }
+  }
 }
