@@ -1,6 +1,6 @@
 import GButton from "./GButton";
 
-function About({ setAboutOpen }) {
+const About = ({ setAboutOpen }) => {
   return (
     <div className="Landing__container--about">
       <button onClick={() => setAboutOpen(false)}>&#10006;</button>

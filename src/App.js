@@ -6,7 +6,7 @@ import "./App.scss";
 import Dailies from "./pages/Dailies.js";
 import Todos from "./pages/Todos.js";
 
-function App() {
+const App = () => {
 
   return (
     <div id="App">

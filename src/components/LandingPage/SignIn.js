@@ -1,6 +1,6 @@
 import GButton from "./GButton"
 
-function SignIn({setAboutOpen}) {
+const SignIn = ({setAboutOpen}) => {
   return (
     <div className="Landing__container--signIn">
         <h2> Where Your Tasks Find Their Flow </h2>

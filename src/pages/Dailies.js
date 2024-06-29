@@ -1,6 +1,4 @@
-import React from "react"
-
-function Dailies() {
+const Dailies = () => {
   return (
     <div>Dailies</div>
   )

@@ -5,7 +5,7 @@ import GoogleButton from "react-google-button";
 
 const API = apiURL();
 
-function GButton() {
+const GButton = () => {
   const auth = getAuth();
   const navigate = useNavigate();
 
